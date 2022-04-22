@@ -1,0 +1,29 @@
+@import '../../sass/index.scss';
+
+nav {
+  @include flexBox(row, center, center);
+  height: 50px;
+  background-color: $light-gray-color;
+
+  ul {
+    @include flexBox(row, center, space-evenly);
+    margin: 0;
+    
+    li {
+      padding: 5px 15px;
+      text-transform: uppercase;
+      color: $gray-color;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+
+      &:hover {
+        color: $blue-color;
+      }
+
+      i {
+        margin-left: 5px;
+      }
+    }
+  }
+}
