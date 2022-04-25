@@ -39,6 +39,16 @@
       width: 100%;
       top: 35px;
       right: 0;
+      background-color: $white-color;
+
+      a {
+        color: $black-color;
+        margin-left: 5px;
+
+        &:hover {
+          color: $blue-color;
+        }
+      }
     }
   }
 }

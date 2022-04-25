@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 
 const HeaderOption = ({ icon, text }) => {
   return (
-    <Link to='' className="header__option">
+    <div className="header__option">
       <i class={icon}></i>
       <span>{text}</span>
-    </Link>
+    </div>
   )
 }
 

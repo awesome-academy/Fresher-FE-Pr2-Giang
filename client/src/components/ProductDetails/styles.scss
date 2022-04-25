@@ -1,0 +1,72 @@
+@import '../../sass/index.scss';
+
+.product-details {
+  background-color: $background-color;
+  padding: 50px 0;
+  margin: 1px 0;
+
+  img {
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  &__left {
+    background-color: $white-color;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 10%);
+
+    h6 {
+      font-weight: bold;
+      color: $black-color;
+      margin: 10px 0;
+    }
+
+    p {
+      margin: 5px 0;
+    }
+  }
+
+  &__right {
+    background-color: $white-color;
+    height: auto;
+    padding: 10px 10px;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 10%);
+
+    h4 {
+      padding: 15px 0;
+    }
+
+    h3 {
+      font-weight: bold;
+      color: $orange-color;
+    }
+
+    .print-btn {
+      @include primaryBtn($white-color, $orange-color, 5px);
+      padding: 10px 30px ;
+      margin: 10px 0;
+    }
+
+    p {
+      color: $gray-color;
+      font-size: $fs-sm;
+      margin-bottom: 8px;
+
+      span {
+        color: $orange-color;
+      }
+
+      i {
+        color: $gray-color;
+        width: 25px;
+      }
+    }
+
+    .order-btn {
+      @include primaryBtn($white-color, $blue-color, 5px);
+      padding: 10px 0;
+      font-weight: bold;
+      width: 100%;
+      margin: 10px 0;
+    }
+  }
+}

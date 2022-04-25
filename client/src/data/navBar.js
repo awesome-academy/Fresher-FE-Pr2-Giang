@@ -1,27 +1,35 @@
 export const navLinks = [
   {
-    title: "trang chủ"
+    title: "trang chủ",
+    link: '/'
   },
   {
-    title: "giới thiệu"
+    title: "giới thiệu",
+    link: '/introduction'
   },
   {
     title: 'tour du lịch',
-    toggle: true
+    toggle: true,
+    link: '/products'
   },
   {
-    title: 'tour khuyến mãi'
+    title: 'tour khuyến mãi',
+    link: '/'
   },
   {
-    title: 'tin tức'
+    title: 'tin tức',
+    link: '/'
   },
   {
-    title: 'kinh nghiệm du lịch'
+    title: 'kinh nghiệm du lịch',
+    link: '/'
   },
   {
-    title: 'faq'
+    title: 'faq',
+    link: '/'
   },
   {
-    title: 'liên hệ'
+    title: 'liên hệ',
+    link: '/'
   }
 ]
