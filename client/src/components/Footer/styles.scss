@@ -1,0 +1,77 @@
+@import '../../sass/index.scss';
+
+.footer {
+  background-color: $black-color;
+  color: $gray-color1;
+
+  &__top {
+    height: 120px;
+    border-bottom: 0.5px dashed rgba(255,255,255,0.2);
+  }
+
+  &__left {
+    width: 25%;
+  }
+
+  &__right {
+    width: 75%;
+    padding-left: 15px
+  }
+
+  &__socialMedia {
+    @include flexBox(row, center, flex-start);
+    height: 100%;
+
+    i {
+      font-size: 35px;
+      margin-right: 10px;
+    }
+  }
+
+  &__register {
+    @include flexBox(column, flex-start, center);
+    width: 40%;
+
+    h4 {
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+  }
+
+  &__left-container {
+    background-color: rgba(0,0,0,0.2);
+  }
+
+  &__logo-container {
+    @include flexBox(row, center, center);
+  }
+
+  &__logo {
+    object-fit: contain;
+    height: 100px;
+    margin: 20px 0;
+  }
+
+  &__info {
+    padding: 10px 15px;
+
+    p {
+      margin-top: 5px;
+    }
+
+    small {
+      font-style: italic;
+    }
+  }
+
+  &__payment {
+    @include flexBox(row, center, flex-start);
+    flex-wrap: wrap;
+    padding: 0 10px;
+
+    img {
+      width: 60px;
+      margin: 5px 5px;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+@import '../../../sass/index.scss';
+
+.emailInput {
+  @include flexBox(row, center, center);
+  width: 60%;
+  border: none;
+
+  input {
+    flex: 1;
+    padding: 8px 10px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    outline: none;
+    border: none;
+  }
+
+  button {
+    padding: 8px 0px;
+    background-color: $blue-color;
+    border: none;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    color: $white-color;
+    font-weight: bold;
+    width: 100px;
+  }
+}

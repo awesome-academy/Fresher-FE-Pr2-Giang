@@ -1,0 +1,17 @@
+@import '../../../sass/index.scss';
+
+.header__option {
+  @include flexBox(row, center, flex-start);
+  margin-left: 20px;
+  color: $black-color;
+  cursor: pointer;
+
+  i {
+    font-size: 28px;
+  }
+
+  span {
+    font-weight: bold;
+    margin-left: 5px;
+  }
+}
