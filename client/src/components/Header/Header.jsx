@@ -3,6 +3,7 @@ import SearchInput from '../Input/SearchInput/SearchInput';
 import './Header.scss';
 import HeaderOption from './Header_options/Header_option';
 import logo from '../../assets/images/header_logo.png';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,8 +24,8 @@ const Header = () => {
             <HeaderOption icon="fa-solid fa-user" text='Tài khoản' />
             {isOpen && (
               <ul>
-              <li>Đăng nhập</li>
-              <li>Đăng ký</li>
+                <li><Link to='/login'>Đăng nhập</Link></li>
+                <li><Link to=''>Đăng ký</Link></li>
             </ul>
             )}
           </div>

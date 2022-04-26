@@ -1,0 +1,25 @@
+@import '../../../sass/index.scss';
+
+.policy {
+  @include flexBox(row, center, flex-start);
+  margin-right: 10px;
+
+  &__img {
+    @include flexBox(row, center, center);
+    @include policyIcon(160px, 80px, 50%);
+    background-color: $blue-color;
+    margin-right: 15px;
+
+    img {
+      width: 50px!important;
+    }
+  }
+
+  p {
+    font-size: $fs-lg;
+  }
+
+  small {
+    color: $gray-color1;
+  }
+}

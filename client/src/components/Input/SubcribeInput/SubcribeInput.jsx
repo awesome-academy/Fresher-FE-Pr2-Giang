@@ -2,7 +2,7 @@ import './styles.scss';
 
 const SubcribeInput = () => {
   return (
-    <form  className='emailInput'>
+    <form  className='subcribe-input'>
       <input type='email'></input>
       <button type='submit'>Đăng ký</button>
     </form>

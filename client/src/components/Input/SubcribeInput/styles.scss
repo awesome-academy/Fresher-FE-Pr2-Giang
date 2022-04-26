@@ -1,6 +1,6 @@
 @import '../../../sass/index.scss';
 
-.emailInput {
+.subcribe-input {
   @include flexBox(row, center, center);
   width: 60%;
   border: none;
@@ -12,6 +12,7 @@
     border-bottom-left-radius: 5px;
     outline: none;
     border: none;
+    background-color: $white-color;
   }
 
   button {
