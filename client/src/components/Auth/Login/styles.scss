@@ -1,0 +1,57 @@
+@import '../../../sass/index.scss';
+
+.login__container {
+  background-color: $background-color;
+}
+
+.login {
+  max-width: 800px;
+  margin: 1px auto;
+  padding: 30px 0;
+
+  &__inner-container {
+    box-shadow: 0 0px 10px 0 rgb(0 0 0 / 10%);
+  }
+
+  img {
+    width: 100%;
+  }
+
+  form {
+    border: none;
+  }
+
+  &__right {
+    background-color: $white-color;
+    padding: 0 20px;
+  }
+
+  h5 {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: $black-color;
+    margin: 10px 0;
+    padding: 10px 0;
+  }
+
+  p {
+    font-size: $fs-sm;
+    text-align: center;
+    color: $gray-color1;
+    margin: 10px 0;
+  }
+
+  &__btn {
+    @include primaryBtn($white-color, $blue-color, 5px);
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .error-message {
+    background-color: $light-red-color;
+    color: $red-color;
+    padding: 10px 10px;
+    border-radius: 5px;
+  }
+}

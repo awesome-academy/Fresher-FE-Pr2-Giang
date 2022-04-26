@@ -23,6 +23,7 @@
       li {
         margin: 5px 0;
         transition: 0.3s;
+        cursor: pointer;
 
         &:hover {
           border-right: 5px solid $blue-color;
@@ -39,6 +40,16 @@
       width: 100%;
       top: 35px;
       right: 0;
+      background-color: $white-color;
+
+      a {
+        color: $black-color;
+        margin-left: 5px;
+
+        &:hover {
+          color: $blue-color;
+        }
+      }
     }
   }
 }

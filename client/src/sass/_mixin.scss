@@ -4,3 +4,17 @@
   align-items: $align-items;
   justify-content: $justify-content;
 }
+
+@mixin primaryBtn($color, $backgroundColor, $borderRadius: 0) {
+  border: none;
+  background-color: $backgroundColor;
+  color: $color;
+  padding: 5px 15px;
+  border-radius: $borderRadius;
+}
+
+@mixin policyIcon($width, $height, $radius: 0) {
+  width: $width;
+  height: $height;
+  border-radius: $radius;
+}

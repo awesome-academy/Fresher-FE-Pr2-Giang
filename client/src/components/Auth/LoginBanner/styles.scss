@@ -1,0 +1,25 @@
+@import '../../../sass/index.scss';
+
+.login-banner {
+  p, h5 {
+    text-align: left;
+  }
+  
+  p {
+    color: $black-color;
+
+    i {
+      color: $blue-color;
+    }
+  }
+
+  h5 {
+    font-weight: normal;
+  }
+
+  & > div {
+    padding: 0 20px;
+    position: relative;
+    top: -85px;
+  }
+}

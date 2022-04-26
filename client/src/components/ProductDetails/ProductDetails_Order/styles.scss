@@ -1,0 +1,72 @@
+@import '../../../sass/index.scss';
+
+
+.product-order {
+  table {
+    width: 100%;
+
+    thead {
+      border-bottom: 1px solid $gray-color1;
+    }
+
+    td {
+      padding: 10px 0;
+    }
+  }
+
+  &__amount {
+    @include flexBox(row, center, center);
+
+    input {
+      width: 30%;
+      outline: none;
+    }
+  }
+
+  .total {
+    font-weight: bold;
+  }
+
+  .total-order {
+    @include flexBox(row, center, flex-end);
+    background-color: $background-color;
+
+    h5 {
+      font-weight: bold;
+      margin-right: 50px;
+    }
+
+    p {
+      font-size: $fs-lg;
+      font-weight: bold;
+      margin-left: 50px;
+      color: $orange-color;
+    }
+  }
+
+  &__btn {
+    @include flexBox(row, center, space-between);
+    margin: 10px 0;
+
+    input {
+      flex: 1;
+      margin-right: 10px;
+    }
+
+    button {
+      flex: 1;
+      @include primaryBtn($white-color, $blue-color, 5px);
+      margin-left: 10px;
+      font-weight: bold;
+      padding: 10px 0;
+    }
+  }
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}

@@ -2,7 +2,7 @@ import './styles.scss';
 
 const SearchInput = () => {
   return (
-    <form>
+    <form className='search-input'>
       <input type='text'></input>
       <button type='submit'><i class="fa-solid fa-magnifying-glass"></i></button>
     </form>

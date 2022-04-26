@@ -1,0 +1,12 @@
+@import '../../../sass/index.scss';
+
+.amount {
+  @include flexBox(row, center, center);
+  border: none;
+
+  input {
+    width: 30%;
+    border: 1px solid $gray-color1;
+    outline: none;
+  }
+}

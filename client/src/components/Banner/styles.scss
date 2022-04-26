@@ -1,0 +1,15 @@
+@import '../../sass/index.scss';
+
+.banner {
+  background-color: $white-color;
+  border-bottom: 2px solid $light-gray-color;
+
+  img {
+    width: 100%;
+  }
+
+  &__policy {
+    @include flexBox(row, center, flex-start);
+    height: 130px;
+  }
+}

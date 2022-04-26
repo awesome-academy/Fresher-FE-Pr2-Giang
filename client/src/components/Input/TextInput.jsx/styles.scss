@@ -1,0 +1,33 @@
+@import '../../../sass/index.scss';
+
+.text-input {
+  margin-bottom: 20px;
+
+  label {
+    width: 100%;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    font-size: $fs-sm;
+
+    &::after {
+      content: " *";
+      color: red;
+    }
+  }
+
+  input {
+    width: 100%;
+    border: 1px solid $input-border-color;
+    padding: 10px 10px;
+    border-radius: 5px;
+    outline: none;
+  }
+}
+
+.error-message {
+  background-color: $light-red-color;
+  color: $red-color;
+  padding: 10px 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+}
