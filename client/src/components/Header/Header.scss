@@ -35,6 +35,12 @@
   &__user {
     position: relative;
 
+    select {
+      position: absolute;
+      top: 35px;
+      right: 0;
+    }
+
     ul {
       position: absolute;
       width: 100%;

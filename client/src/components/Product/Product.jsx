@@ -1,8 +1,11 @@
 import './styles.scss';
 import { convertMoney } from '../../helpers/convertMoney';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const Product = ({ title, transportation, startingDate, duration, mainImg, price, id }) => {
+  const { t } = useTranslation();
+
   return (
     <div className='product'>
       <Link to={`/product/${id}`}><img src={mainImg} alt='product-img'></img></Link>
@@ -23,7 +26,7 @@ const Product = ({ title, transportation, startingDate, duration, mainImg, price
         <p><i class="fa-solid fa-calendar"></i>Thời gian: <span>{duration}</span></p>
         <div className='product__price'>
           <h4>{convertMoney(price)}</h4>
-          <button>ĐẶT TOUR</button>
+          <button>{t('book')}</button>
         </div>
       </div>
     </div>

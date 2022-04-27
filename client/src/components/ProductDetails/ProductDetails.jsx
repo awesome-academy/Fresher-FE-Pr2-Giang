@@ -7,8 +7,11 @@ import { convertMoney } from '../../helpers/convertMoney';
 import ProductDetailsOrder from './ProductDetails_Order/ProductDetailsOrder';
 import { useEffect } from 'react';
 import { getProducts } from '../../redux/slices/productsSlice';
+import { useTranslation } from 'react-i18next';
 
 const ProductDetails = () => {
+  const { t } = useTranslation();
+
   const { id } = useParams();
   const { products } = useSelector(state => state.products);
 
@@ -49,7 +52,7 @@ const ProductDetails = () => {
             {product?.itinerary && (
               <div>
                 <ProductDetailsPolicy />
-                <ProductDetailsOrder price={product.price} />
+                <ProductDetailsOrder {...product} />
               </div>
             )}
           </div>
@@ -57,7 +60,7 @@ const ProductDetails = () => {
             <div className='product-details__right'> 
               <h4>{product?.title}</h4>
               <h3>{product && convertMoney(product.price)}</h3>
-              <button className='print-btn'><i class="fa-solid fa-print"></i> In chương trình tour</button>
+              <button className='print-btn'><i class="fa-solid fa-print"></i> {t('print')}</button>
               {product && product.transportation.map(transportType => {
                 if(transportType === 1){
                   return <p><i class="fa-solid fa-bus-simple"></i>Di chuyển: <span>Ô tô</span></p>
@@ -69,7 +72,7 @@ const ProductDetails = () => {
               })}
               <p><i class="fa-solid fa-clock"></i>Lịch khởi hành: <span>{product?.startingDate}</span></p>
               <p><i class="fa-solid fa-calendar"></i>Thời gian: <span>{product?.duration}</span></p>
-              <button className='order-btn'>ĐẶT TOUR</button>
+              <button className='order-btn'>{t('book')}</button>
             </div>
           </div>
         </div>

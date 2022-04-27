@@ -3,7 +3,6 @@ import './styles.scss';
 const SelectAmount = ({ value, setAmount }) => {
   const handleAmount = (e) => {
     if(e.target.value >= 0){
-      console.log(e.target.value);
       setAmount(e.target.value);
     }
   };

@@ -3,11 +3,30 @@ import ProductDetailsHeading from '../ProductDetails_Heading/ProductDetails_Head
 import SelectAmount from '../../Input/SelectAmount/SelectAmount';
 import './styles.scss';
 import { convertMoney } from '../../../helpers/convertMoney';
+import { useDispatch, useSelector } from 'react-redux';
+import { addToCart } from '../../../redux/slices/cartSlice';
+import { useTranslation } from 'react-i18next';
 
-const ProductDetailsOrder = ({ price }) => {
+const ProductDetailsOrder = ({ price, title, duration, mainImg, id }) => {
+  const { t } = useTranslation();
+
   const [amountForAdult, setAmountForAdult] = useState(1);
   const [amountForChildren, setAmountForChildren] = useState(0);
   const [date, setDate] = useState(null);
+
+  const dispatch = useDispatch();
+
+  const getTotal = (price) => {
+    return (price * amountForAdult) + ((price*0.5) * amountForChildren);
+  };
+
+  const handleOrder = () => {
+    const addedProduct = {
+      title, duration, mainImg, amountForAdult, amountForChildren, date, id, total: getTotal(price)
+    };
+
+    dispatch(addToCart({ addedProduct, id }));
+  };
 
   return (
     <div className='product-order'>
@@ -40,11 +59,11 @@ const ProductDetailsOrder = ({ price }) => {
       </table>
       <div className='total-order'>
         <h5>Tổng tiền</h5>
-        <p>{convertMoney((price * amountForAdult) + ((price*0.5) * amountForChildren))}</p>
+        <p>{convertMoney(getTotal(price))}</p>
       </div>
       <div className='product-order__btn'>
         <input type='date' value={date} onChange={(e) => setDate(e.target.value)}></input>
-        <button>ĐẶT TOUR</button>
+        <button type='button' onClick={handleOrder}>{t('book')}</button>
       </div>
     </div>
   )
