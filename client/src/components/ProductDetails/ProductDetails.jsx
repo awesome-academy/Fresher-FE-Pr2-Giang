@@ -45,9 +45,13 @@ const ProductDetails = () => {
       <div className='container-xl'>
         <div className='row'>
           <div className='col-lg-8 product-details__left'>
-            {product && renderItinerary(product.itinerary)}
-            <ProductDetailsPolicy />
-            <ProductDetailsOrder />
+            {product?.itinerary ? renderItinerary(product.itinerary) : <div className='product-not-found'>Sản phẩm hiện chưa có chương trình cụ thể</div>}
+            {product?.itinerary && (
+              <div>
+                <ProductDetailsPolicy />
+                <ProductDetailsOrder price={product.price} />
+              </div>
+            )}
           </div>
           <div className='col-lg-4'>
             <div className='product-details__right'> 

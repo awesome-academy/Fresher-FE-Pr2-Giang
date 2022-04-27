@@ -30,7 +30,8 @@
       "title": "Du lịch Nha Trang - Hòn Tằm - KDL Vinpearl",
       "id": 3,
       "transportation": [
-        1,2
+        1,
+        2
       ],
       "startingDate": "Thứ 2 hàng tuần",
       "duration": "3 ngày 2 đêm",
@@ -43,7 +44,8 @@
       "title": "Du lịch Đà Lạt - Kdl Trang Trại Rau & Hoa - Đường Hầm Đất Sét",
       "id": 4,
       "transportation": [
-        1,3
+        1,
+        3
       ],
       "startingDate": "Thứ 2 hàng tuần",
       "duration": "2 ngày 1 đêm",
@@ -56,7 +58,8 @@
       "title": "Du lịch Hồ Phú Ninh - Tam Thanh - Rừng Dừa Bảy Mẫu - Đà Nẵng - Hội An - Bà Nà - Huế",
       "id": 5,
       "transportation": [
-        1,3
+        1,
+        3
       ],
       "startingDate": "Thứ 2 hàng tuần",
       "duration": "4 ngày 3 đêm",
@@ -69,7 +72,8 @@
       "title": "Du lịch Mỹ Tho - Cần Thơ - Cà Mau - Bạc Liêu - Sóc Trăng",
       "id": 6,
       "transportation": [
-        1,2
+        1,
+        2
       ],
       "startingDate": "Thứ 2 hàng tuần",
       "duration": "4 ngày 3 đêm",
@@ -93,7 +97,9 @@
       "title": "Du lịch Phú Quốc Câu cá - Ngắm san hô",
       "id": 8,
       "transportation": [
-        1,2,3
+        1,
+        2,
+        3
       ],
       "startingDate": "Thứ 2 hàng tuần",
       "duration": "4 ngày 3 đêm",
@@ -105,7 +111,8 @@
       "title": "Tour Campuchia 4N3Đ: Bokor - Shihanouk Ville - Kohrong - Phnôm Pênh",
       "id": 9,
       "transportation": [
-        1,3
+        1,
+        3
       ],
       "startingDate": "Thứ 2 hàng tuần",
       "duration": "4 ngày 3 đêm",
@@ -117,7 +124,9 @@
       "title": "Du thuyền 5 Sao Voyager Of The Seas",
       "id": 10,
       "transportation": [
-        1,2,3
+        1,
+        2,
+        3
       ],
       "startingDate": "Thứ 2 hàng tuần",
       "duration": "4 ngày 3 đêm",
@@ -129,7 +138,9 @@
       "title": "Du lịch Malaysia - Singapore [Thủy cung S.E.A AQUARIUM]",
       "id": 11,
       "transportation": [
-        1,2,3
+        1,
+        2,
+        3
       ],
       "startingDate": "Thứ 2 hàng tuần",
       "duration": "4 ngày 3 đêm",
@@ -141,7 +152,8 @@
       "title": "Du lịch Anh - Scotland [Lễ hội hoa Chelsea]",
       "id": 12,
       "transportation": [
-        1,3
+        1,
+        3
       ],
       "startingDate": "Thứ 2 hàng tuần",
       "duration": "7 ngày 6 đêm",
@@ -153,7 +165,8 @@
       "title": "Du lịch Ý [Rome - Pisa - Florence - Venice - Milan]",
       "id": 13,
       "transportation": [
-        1,3
+        1,
+        3
       ],
       "startingDate": "Thứ 2 hàng tuần",
       "duration": "6 ngày 5 đêm",
@@ -163,9 +176,10 @@
     },
     {
       "title": "Du lịch Nam Phi [Johannesburg - Pretoria - Soweto - Cape Town]",
-      "id":14,
+      "id": 14,
       "transportation": [
-        1,3
+        1,
+        3
       ],
       "startingDate": "Thứ 2 hàng tuần",
       "duration": "5 ngày 4 đêm",
@@ -177,7 +191,9 @@
       "title": "Du lịch Pháp - Bỉ - Hà Lan [Hội Hoa Tulip Keukenhof]",
       "id": 15,
       "transportation": [
-        1,2,3
+        1,
+        2,
+        3
       ],
       "startingDate": "Thứ 2 hàng tuần",
       "duration": "5 ngày 4 đêm",
@@ -189,13 +205,35 @@
       "title": "Du lịch Châu Âu Pháp - Thụy Sỹ - Núi Jungfrau - Ý",
       "id": 16,
       "transportation": [
-        1,2,3
+        1,
+        2,
+        3
       ],
       "startingDate": "Thứ 2 hàng tuần",
       "duration": "10 ngày 9 đêm",
       "price": 85990000,
       "mainImg": "https://bizweb.dktcdn.net/thumb/1024x1024/100/372/532/products/jungfraujoch.jpg?v=1575556089853",
       "type": "international"
+    }
+  ],
+  "users": [
+    {
+      "lastName": "Bui",
+      "firstName": "Giang",
+      "phoneNumber": "0123456789a",
+      "email": "truong@gmail.com",
+      "password": "Truonggiang96!",
+      "accessId": "OtSAypReIfeIOm3Yll6lObd8iDv2",
+      "id": 1
+    },
+    {
+      "accessId": "eVzAbM5RcsZvXnfSHNZWWGfjYwB3",
+      "lastName": "Truong",
+      "firstName": "Giang",
+      "phoneNumber": "9876543210",
+      "email": "giang@gmail.com",
+      "password": "Truonggiang96!",
+      "id": 2
     }
   ]
 }

@@ -2,10 +2,12 @@ import { useState } from 'react';
 import ProductDetailsHeading from '../ProductDetails_Heading/ProductDetails_Heading';
 import SelectAmount from '../../Input/SelectAmount/SelectAmount';
 import './styles.scss';
+import { convertMoney } from '../../../helpers/convertMoney';
 
-const ProductDetailsOrder = () => {
+const ProductDetailsOrder = ({ price }) => {
   const [amountForAdult, setAmountForAdult] = useState(1);
-  const [amountForChildren, setAmountForChildren] = useState(1);
+  const [amountForChildren, setAmountForChildren] = useState(0);
+  const [date, setDate] = useState(null);
 
   return (
     <div className='product-order'>
@@ -23,25 +25,25 @@ const ProductDetailsOrder = () => {
             <td className='d-flex justify-content-center'>
               <SelectAmount value={amountForAdult} setAmount={setAmountForAdult} />
             </td>
-            <td className='text-right'>2.000.000d</td>
-            <td className='total text-right'>2.000.000d</td>
+            <td className='text-right'>{convertMoney(price)}</td>
+            <td className='total text-right'>{convertMoney(price * amountForAdult)}</td>
           </tr>
           <tr>
             <td>Trẻ em</td>
             <td className='d-flex justify-content-center'>
               <SelectAmount value={amountForChildren} setAmount={setAmountForChildren} />
             </td>
-            <td className='text-right'>1.000.000d</td>
-            <td className='total text-right'>1.000.000d</td>
+            <td className='text-right'>{convertMoney(price*0.5)}</td>
+            <td className='total text-right'>{convertMoney((price*0.5) * amountForChildren)}</td>
           </tr>
         </tbody>
       </table>
       <div className='total-order'>
         <h5>Tổng tiền</h5>
-        <p>2.000.000d</p>
+        <p>{convertMoney((price * amountForAdult) + ((price*0.5) * amountForChildren))}</p>
       </div>
       <div className='product-order__btn'>
-        <input type='date'></input>
+        <input type='date' value={date} onChange={(e) => setDate(e.target.value)}></input>
         <button>ĐẶT TOUR</button>
       </div>
     </div>
