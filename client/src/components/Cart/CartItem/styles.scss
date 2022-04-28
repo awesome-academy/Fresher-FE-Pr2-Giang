@@ -1,0 +1,43 @@
+@import '../../../sass/index.scss';
+
+.cart-item {
+  @include flexBox(row, center, space-between);
+  padding: 30px 0;
+  border-bottom: 1px solid $light-gray-color;
+
+  &__left {
+    @include flexBox(row, center, flex-start);
+
+    img {
+      height: 200px;
+      object-fit: contain;
+    }
+  }
+
+  &__info {
+    margin-left: 30px;
+
+    p {
+      font-size: $fs-md;
+      margin-bottom: 5px;
+    }
+
+
+  }
+
+  &__right {
+    h5 {
+      color: $orange-color;
+    }
+  }
+
+  &__update {
+    @include primaryBtn($white-color, $blue-color);
+    margin-right: 10px
+  }
+
+  &__delete {
+    @include primaryBtn($white-color, $orange-color);
+    margin-right: 10px
+  }
+}

@@ -1,0 +1,55 @@
+@import '../../sass/index.scss';
+
+.checkout {
+  margin: 30px 0;
+
+  h5 {
+    font-weight: bold;
+    margin: 10px 0;
+    padding: 10px 0;
+    text-transform: uppercase;
+  }
+
+  &__right {
+    background-color: $background-color;
+
+    &-title {
+      @include flexBox(row, center, flex-start);
+
+      small {
+        margin-left: 10px;
+      }
+    }
+  }
+
+  &__total {
+    padding: 20px 0;
+    border-bottom: 1px solid $gray-color1;
+
+    & > div {
+      @include flexBox(row, center, space-between);
+      margin: 10px 0;
+    }
+  }
+
+  &__order {
+    padding: 20px 0;
+
+    & > div {
+      @include flexBox(row, center, space-between);
+    }
+
+    p {
+      color: $blue-color;
+      &:hover {
+        opacity: 0.6;
+        cursor: pointer;
+      }
+    }
+
+    button {
+      @include primaryBtn($white-color, $blue-color, 5px);
+      padding: 10px 20px;
+    }
+  }
+}
