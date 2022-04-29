@@ -21,10 +21,20 @@ export const cartSlice = createSlice({
         state.cart = [addedProduct];
       }
     },
+
+    deleteCartItem: (state, action) => {
+      state.cart = state.cart.filter(item => item.id !== action.payload);
+    },
+
+    deleteAllCartItem: (state, action) => {
+      state.cart = [];
+    }
   }
 });
 
 export const {
-  addToCart
+  addToCart,
+  deleteCartItem,
+  deleteAllCartItem
 } = cartSlice.actions;
 export default cartSlice.reducer;

@@ -6,6 +6,10 @@ import { Routes, Route } from 'react-router-dom';
 import ProductDetails from "./components/ProductDetails/ProductDetails";
 import Login from "./components/Auth/Login/Login";
 import SignUp from "./components/Auth/SignUp/SignUp";
+import Cart from "./components/Cart/Cart";
+import Checkout from "./components/Checkout/Checkout";
+import CheckoutSuccess from "./components/Checkout/CheckoutSuccess/CheckoutSuccess";
+import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 
 function App() {
   return (
@@ -17,6 +21,11 @@ function App() {
         <Route path='/product/:id' element={<ProductDetails />} />
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<SignUp />} />
+        <Route path='/cart' element={<Cart />} />
+        <Route element={<ProtectedRoute />}>
+          <Route path='/checkout' element={<Checkout />} />
+          <Route path='/checkout-success' element={<CheckoutSuccess />} />
+        </Route>
       </Routes>
       <Footer />
     </>

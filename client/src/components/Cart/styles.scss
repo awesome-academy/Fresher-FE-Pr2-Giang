@@ -1,0 +1,69 @@
+@import '../../sass/index.scss';
+
+.cart {
+  margin: 30px 0;
+
+  &__title {
+    @include flexBox(row, flex-end, flex-start);
+
+    h3 {
+      margin-right: 5px;
+    }
+  }
+
+  &__list {
+    margin: 30px 0;
+  }
+
+  &__checkout {
+    @include flexBox(row, flex-start, space-between);
+
+    button {
+      @include primaryBtn($white-color, $blue-color, 5px);
+      width: 100%;
+      padding: 15px 0;
+    }
+
+    &-right {
+      width: 50%
+    }
+  }
+
+  &__total {
+    @include flexBox(row, center, space-between);
+    margin-bottom: 10px;
+
+    h6 {
+      font-weight: bold;
+    }
+
+    h4 {
+      color: $orange-color;
+      font-weight: bold;
+    }
+  }
+
+  &__keep-buying {
+    transition: 0.3s;
+    color: $black-color;
+
+    &:hover {
+      color: $blue-color;
+      cursor: pointer;
+    } 
+  }
+  
+  .modal-login {
+    @include primaryBtn($white-color, $blue-color, 5px);
+    padding: 10px 0;
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .modal-signup {
+    @include primaryBtn($white-color, $orange-color, 5px);
+    padding: 10px 0;
+    width: 100%;
+    margin: 10px 0;
+  }
+}

@@ -1,0 +1,29 @@
+@import '../../../sass/index.scss';
+
+.checkout-item {
+  @include flexBox(row, center, space-between);
+  padding: 20px 0;
+  border-bottom: 1px solid $gray-color1;
+
+  &__left {
+    @include flexBox(row, center, flex-start);
+    width: 70%;
+
+    img {
+      height: 50px;
+      object-fit: contain;
+      border-radius: 10px;
+    }
+
+    p {
+      margin-left: 10px;
+      font-size: $fs-sm;
+    }
+  }
+
+  &__right {
+    p {
+      color: $gray-color;
+    }
+  }
+}

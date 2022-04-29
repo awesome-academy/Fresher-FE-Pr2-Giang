@@ -6,15 +6,17 @@ import { convertMoney } from '../../../helpers/convertMoney';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCart } from '../../../redux/slices/cartSlice';
 import { useTranslation } from 'react-i18next';
+import useToggle from '../../../customHooks/useToggle';
+import Modal from '../../Modal/Modal';
+import CheckoutItem from '../../Checkout/CheckoutItem/CheckoutItem';
 
 const ProductDetailsOrder = ({ price, title, duration, mainImg, id }) => {
   const { t } = useTranslation();
-
   const [amountForAdult, setAmountForAdult] = useState(1);
   const [amountForChildren, setAmountForChildren] = useState(0);
   const [date, setDate] = useState(null);
-
   const dispatch = useDispatch();
+  const [isBooked, setIsBooked] = useToggle();
 
   const getTotal = (price) => {
     return (price * amountForAdult) + ((price*0.5) * amountForChildren);
@@ -26,6 +28,7 @@ const ProductDetailsOrder = ({ price, title, duration, mainImg, id }) => {
     };
 
     dispatch(addToCart({ addedProduct, id }));
+    setIsBooked();
   };
 
   return (
@@ -65,6 +68,12 @@ const ProductDetailsOrder = ({ price, title, duration, mainImg, id }) => {
         <input type='date' value={date} onChange={(e) => setDate(e.target.value)}></input>
         <button type='button' onClick={handleOrder}>{t('book')}</button>
       </div>
+      <Modal open={isBooked} toggle={setIsBooked}>
+        <p>Bạn đã book tour du lịch:</p>
+        <div>
+          <CheckoutItem mainImg={mainImg} title={title}/>
+        </div>
+      </Modal>
     </div>
   )
 };

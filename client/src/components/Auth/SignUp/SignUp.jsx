@@ -1,8 +1,6 @@
 import './styles.scss';
 import TextInput from '../../Input/TextInput.jsx/TextInput';
 import BannerSide from '../LoginBanner/BannerSide';
-import { useState } from 'react';
-import { validatePhoneNumber, validateNameString, validateEmail, validatePassword } from '../../../helpers/validation';
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import app from '../../../Firebase/firebase';
 import { useNavigate } from 'react-router-dom';

@@ -220,11 +220,13 @@
     {
       "lastName": "Bui",
       "firstName": "Giang",
-      "phoneNumber": "0123456789a",
+      "phoneNumber": "3214569870",
       "email": "truong@gmail.com",
       "password": "Truonggiang96!",
       "accessId": "OtSAypReIfeIOm3Yll6lObd8iDv2",
-      "id": 1
+      "id": 1,
+      "fullname": "qweqweqwe",
+      "address": "zczxczxc"
     },
     {
       "accessId": "eVzAbM5RcsZvXnfSHNZWWGfjYwB3",

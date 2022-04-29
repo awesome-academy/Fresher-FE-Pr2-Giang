@@ -1,0 +1,23 @@
+@import '../../../sass/index.scss';
+
+.radio-input {
+  @include flexBox(row, center, space-between);
+  border: 1px solid $light-gray-color;
+  border-radius: 10px;
+  padding: 15px 15px;
+  margin: 36px 0;
+  box-shadow: 0 0px 10px 0 rgb(0 0 0 / 10%);;
+
+  &__left {
+    @include flexBox(row, center, flex-start);
+
+    input {
+      width: 20px;
+      height: 20px;
+    }
+
+    p {
+      margin-left: 10px;
+    }
+  }
+}

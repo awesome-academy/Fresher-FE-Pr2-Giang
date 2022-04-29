@@ -1,0 +1,28 @@
+@import '../../../sass/index.scss';
+
+.checkout-success {
+  @include flexBox(row, center, center);
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+  & > div {
+    @include flexBox(column, center, flex-start);
+
+    p {
+      font-size: $fs-xl;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    i {
+      margin-bottom: 20px;
+      font-size: 50px;
+      color: $green-color;
+    }
+  }
+
+  button {
+    @include primaryBtn($white-color, $blue-color, 5px);
+    padding: 10px 20px;
+  }
+}
