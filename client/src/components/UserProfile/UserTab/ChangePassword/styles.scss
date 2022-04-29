@@ -1,0 +1,22 @@
+@import '../../../../sass/index.scss';
+
+.change-password {
+  margin: 30px 0;
+
+  &__form {
+    margin-top: 20px;
+  }
+
+  &__btn {
+    @include primaryBtn($white-color, $blue-color, 5px);
+    padding: 10px 25px;
+  }
+}
+
+.update-success {
+  background-color: $light-green-color;
+  color: $green-color;
+  padding: 10px 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+}

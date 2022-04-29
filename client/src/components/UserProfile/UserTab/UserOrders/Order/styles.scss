@@ -1,0 +1,12 @@
+@import '../../../../../sass/index.scss';
+
+.order {
+  a {
+    color: $blue-color;
+    transition: 0.3s;
+
+    &:hover {
+      color: $black-color;
+    }
+  }
+}

@@ -21,7 +21,11 @@ export const usersSlice = createSlice({
   
     signOutUser: (state, action) => {
       state.user = null;
-    }
+    },
+
+    updateUser: (state, action) => {
+      state.user = {...state.user, ...action.payload}
+    },
   },
   extraReducers: {
     [getUsers.pending]: (state) => {
@@ -38,6 +42,7 @@ export const usersSlice = createSlice({
 
 export const {
   setUser,
-  signOutUser
+  signOutUser,
+  updateUser
 } = usersSlice.actions;
 export default usersSlice.reducer;

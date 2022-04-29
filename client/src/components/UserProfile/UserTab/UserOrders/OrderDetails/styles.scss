@@ -1,0 +1,13 @@
+@import '../../../../../sass/index.scss';
+
+.order-details {
+  p {
+    span {
+      color: $red-color;
+    }
+  }
+
+  &__total {
+    color: $blue-color;
+  }
+}

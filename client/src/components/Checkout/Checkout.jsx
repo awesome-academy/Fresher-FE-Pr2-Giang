@@ -12,6 +12,7 @@ import { RE_STRING } from '../../data/constants';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { deleteAllCartItem } from '../../redux/slices/cartSlice';
+import { updateUser } from '../../redux/slices/usersSlice';
 
 const schema = yup.object().shape({
   fullname: yup.string().matches(RE_STRING, "Only alphabets are allowed for this field").required(),
@@ -56,13 +57,23 @@ const Checkout = () => {
   ];
 
   const handleCheckout = (data) => {
-    fetch(`http://localhost:3000/users/${user.id}`, {
-      method: 'PATCH',
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({...data})
-    });
-    dispatch(deleteAllCartItem());
-    navigate('/checkout-success');
+    if(user) {
+      fetch(`http://localhost:3000/users/${user.id}`, {
+        method: 'PATCH',
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+      });
+      fetch(`http://localhost:3000/orders`, {
+        method: 'POST',
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({userId: user.id, orders: [...cartList], createdAt: new Date().toDateString()})
+      });
+      dispatch(updateUser(data))
+      dispatch(deleteAllCartItem());
+      navigate('/checkout-success');
+    } else {
+      navigate('/signup');
+    }
   };
 
   return (
