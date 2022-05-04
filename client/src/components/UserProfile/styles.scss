@@ -1,0 +1,22 @@
+@import '../../sass/index.scss';
+
+.user {
+  margin: 30px 0;
+
+  &__left {
+    width: 25%;
+  }
+
+  &__right {
+    width: 75%;
+  }
+
+  h5 {
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+
+  span {
+    font-weight: bold;
+  }
+}

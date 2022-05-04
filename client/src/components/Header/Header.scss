@@ -22,11 +22,13 @@
 
       li {
         margin: 5px 0;
+        margin-left: 5px;
         transition: 0.3s;
         cursor: pointer;
 
         &:hover {
           border-right: 5px solid $blue-color;
+          color: $blue-color;
         }
       }
     }
@@ -50,7 +52,6 @@
 
       a {
         color: $black-color;
-        margin-left: 5px;
 
         &:hover {
           color: $blue-color;

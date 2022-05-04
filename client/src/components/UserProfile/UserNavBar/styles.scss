@@ -1,0 +1,17 @@
+@import '../../../sass/index.scss';
+
+.user-navbar {
+  margin: 20px 0;
+
+  li {
+    margin-bottom: 10px;
+  }
+
+  a {
+    color: $black-color;
+  }
+
+  .navlink-active {
+    color: $blue-color;
+  }
+}

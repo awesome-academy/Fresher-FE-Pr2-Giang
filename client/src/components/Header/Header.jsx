@@ -56,6 +56,7 @@ const Header = () => {
             {<HeaderOption icon="fa-solid fa-user" text={user ? `Xin chào ${user.lastName} ${user.firstName}` : 'Tài khoản'} />}
             {isUserOpen && user ? (
               <ul>
+                <li><Link to='/user'>Thông tin người dùng</Link></li>
                 <li onClick={handleSignOut}>Đăng xuất</li>
             </ul>
             ) : isUserOpen ? (

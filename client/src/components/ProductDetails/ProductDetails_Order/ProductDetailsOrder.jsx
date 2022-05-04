@@ -65,13 +65,13 @@ const ProductDetailsOrder = ({ price, title, duration, mainImg, id }) => {
         <p>{convertMoney(getTotal(price))}</p>
       </div>
       <div className='product-order__btn'>
-        <input type='date' value={date} onChange={(e) => setDate(e.target.value)}></input>
+        <input type='date' value={date} onChange={(e) => setDate(e.target.value)} required></input>
         <button type='button' onClick={handleOrder}>{t('book')}</button>
       </div>
       <Modal open={isBooked} toggle={setIsBooked}>
         <p>Bạn đã book tour du lịch:</p>
         <div>
-          <CheckoutItem mainImg={mainImg} title={title}/>
+          <CheckoutItem mainImg={mainImg} title={title} amountForAdult={amountForAdult} amountForChildren={amountForChildren} />
         </div>
       </Modal>
     </div>
