@@ -1,0 +1,16 @@
+@import '../../../sass/index.scss';
+
+.admin-sidebar {
+  height: 100vh;
+  width: 6vw;
+  background-color: $blue-color;
+  position: fixed;
+  top: 0px;
+  bottom: 0;
+  left: 0;
+}
+
+.navlink-active {
+  background-color: $white-color!important;
+  color: $blue-color!important;
+}

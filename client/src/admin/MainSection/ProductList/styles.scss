@@ -1,0 +1,18 @@
+@import '../../../sass/index.scss';
+
+.product-list {
+  padding: 10px;
+
+  &__add {
+    margin-bottom: 10px;
+
+    button {
+      @include primaryBtn($white-color, $blue-color, 5px);
+      padding: 10px 20px;
+
+      i {
+        font-size: $fs-lg;
+      }
+    }
+  }
+}

@@ -17,18 +17,23 @@ const ProductDetailsOrder = ({ price, title, duration, mainImg, id }) => {
   const [date, setDate] = useState(null);
   const dispatch = useDispatch();
   const [isBooked, setIsBooked] = useToggle();
+  const [isDateChosen, setIsDateChosen] = useToggle();
 
   const getTotal = (price) => {
     return (price * amountForAdult) + ((price*0.5) * amountForChildren);
   };
 
   const handleOrder = () => {
-    const addedProduct = {
-      title, duration, mainImg, amountForAdult, amountForChildren, date, id, total: getTotal(price)
-    };
-
-    dispatch(addToCart({ addedProduct, id }));
-    setIsBooked();
+    if(date){
+      const addedProduct = {
+        title, duration, mainImg, amountForAdult, amountForChildren, date, id, total: getTotal(price)
+      };
+  
+      dispatch(addToCart({ addedProduct, id }));
+      setIsBooked();
+    } else {
+      setIsDateChosen();
+    }
   };
 
   return (
@@ -73,6 +78,9 @@ const ProductDetailsOrder = ({ price, title, duration, mainImg, id }) => {
         <div>
           <CheckoutItem mainImg={mainImg} title={title} amountForAdult={amountForAdult} amountForChildren={amountForChildren} />
         </div>
+      </Modal>
+      <Modal open={isDateChosen} toggle={setIsDateChosen}>
+        <h3>Starting date needs to be chosen!</h3>
       </Modal>
     </div>
   )

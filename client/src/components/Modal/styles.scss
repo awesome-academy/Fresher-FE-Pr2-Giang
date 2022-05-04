@@ -21,6 +21,8 @@
   border-radius: 10px;
   padding: 50px;
   background-color: $white-color;
+  overflow: scroll;
+  max-height: 800px;
 
   .modal-main__close {
     position: absolute;

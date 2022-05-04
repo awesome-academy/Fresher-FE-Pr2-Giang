@@ -1,6 +1,6 @@
 @import '../../sass/index.scss';
 
-nav {
+.nav-bar {
   @include flexBox(row, center, center);
   height: 50px;
   background-color: $light-gray-color;
