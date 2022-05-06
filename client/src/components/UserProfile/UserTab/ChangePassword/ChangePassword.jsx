@@ -27,19 +27,19 @@ const ChangePassword = () => {
     {
       label: 'mật khẩu cũ',
       name: 'oldPassword',
-      type: 'text',
+      type: 'password',
       placeholder: 'Mật khẩu cũ',
     },
     {
       label: 'mật khẩu mới',
       name: 'newPassword',
-      type: 'text',
+      type: 'password',
       placeholder: 'Mật khẩu mới',
     },
     {
       label: 'xác nhận lại mật khẩu mới',
       name: 'confirmNewPassword',
-      type: 'text',
+      type: 'password',
       placeholder: 'xác nhận lại mật khẩu mới',
     }
   ];

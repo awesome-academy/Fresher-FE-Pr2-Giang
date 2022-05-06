@@ -62,9 +62,9 @@ const ProductDetails = () => {
               <h3>{product && convertMoney(product.price)}</h3>
               <button className='print-btn'><i class="fa-solid fa-print"></i> {t('print')}</button>
               {product && product.transportation.map(transportType => {
-                if(transportType === 1){
+                if(transportType === '1'){
                   return <p><i class="fa-solid fa-bus-simple"></i>Di chuyển: <span>Ô tô</span></p>
-                } else if(transportType === 2){
+                } else if(transportType === '2'){
                   return <p><i class="fa-solid fa-ship"></i>Di chuyển: <span>Tàu thủy</span></p>
                 } else {
                   return <p><i class="fa-solid fa-plane"></i>Di chuyển: <span>Máy bay</span></p>

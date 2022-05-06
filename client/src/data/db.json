@@ -4,7 +4,7 @@
       "title": "Du lịch Hà Nội - Ninh Bình - Cát Bà - Hạ Long - Hải Dương",
       "id": 1,
       "transportation": [
-        1
+        "1"
       ],
       "startingDate": "Thứ 2 hàng tuần",
       "duration": "4 ngày 3 đêm",
@@ -17,7 +17,9 @@
       "title": "Tour Phan Thiết Mũi Né Resort 3,4* - 3 ngày 2 đêm",
       "id": 2,
       "transportation": [
-        1
+        "1",
+        "2",
+        "3"
       ],
       "startingDate": "Thứ 2 hàng tuần",
       "duration": "3 ngày 2 đêm",

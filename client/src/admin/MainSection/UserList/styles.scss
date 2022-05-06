@@ -1,0 +1,15 @@
+@import '../../../sass/index.scss';
+
+.user-list {
+  padding: 10px;
+
+  &__table {
+    width: 100%;
+    text-align: center;
+
+    thead {
+      font-weight: bold;
+      height: 50px;
+    }
+  }
+}

@@ -1,0 +1,54 @@
+@import '../../../../sass/index.scss';
+
+.product {
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 10%);
+  margin-bottom: 20px;
+  transition: ease-in-out 0.3s;
+
+  &:hover {
+    box-shadow: 0 0px 10px 0 rgb(0 0 0 / 50%);
+  }
+
+  img {
+    width: 100%;
+    object-fit: cover;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    cursor: pointer;
+  }
+
+  &__info {
+    padding: 10px 10px;
+    background-color: $white-color;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+
+    & > * {
+      margin-bottom: 8px;
+    }
+
+    h5 {
+      color: $black-color;
+      font-size: $fs-md;
+      transition: 0.3s;
+      
+      &:hover {
+        color: $blue-color;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__btns {
+    @include flexBox(row, center, center);
+
+    button {
+      @include primaryBtn($white-color, $blue-color, 5px);
+      margin: 0 5px;
+      
+      i {
+        color: $white-color;
+      }
+    }
+  }
+}

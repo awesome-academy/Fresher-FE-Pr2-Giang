@@ -1,0 +1,13 @@
+@import '../sass/index.scss';
+
+.main {
+  @include flexBox(row, flex-start, flex-start);
+
+  &__left {
+    width: 6%;
+  }
+
+  &__right {
+    flex: 1;
+  }
+}

@@ -87,12 +87,6 @@ const Checkout = () => {
               <TextInput {...input} register={register} errors={errors} />
             ))}
           </div>
-          <div className='col-lg-4'>
-            <h5>Vận chuyển</h5>
-            <RadioInput text1='Giao hàng tận nơi' text2='40.000đ'/>
-            <h5>Thanh toán</h5>
-            <RadioInput text1='Thanh toán khi giao hàng (COD)' />
-          </div>
           <div className='col-lg-4 checkout__right'>
             <div className='checkout__right-title'>
               <h5>Đơn hàng</h5>

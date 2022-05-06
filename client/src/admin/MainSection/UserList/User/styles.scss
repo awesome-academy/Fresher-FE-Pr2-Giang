@@ -1,0 +1,12 @@
+@import '../../../../sass/index.scss';
+
+.admin-user {
+  border-bottom: 1px solid $gray-color1;
+  border-top: 1px solid $gray-color1;
+  height: 50px;
+
+  &:hover {
+    box-shadow: 0 0px 10px 0 rgb(0 0 0 / 50%);
+    cursor: pointer;
+  }
+}

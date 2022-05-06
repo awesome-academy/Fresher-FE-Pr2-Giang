@@ -13,9 +13,9 @@ const Product = ({ title, transportation, startingDate, duration, mainImg, price
         <h5>{title}</h5>
         <div className='product__transport'>
           {transportation?.map(transportType => {
-            if(transportType === 1){
+            if(transportType === "1"){
               return <i class="fa-solid fa-bus-simple"></i>
-            } else if(transportType === 2){
+            } else if(transportType === "2"){
               return <i class="fa-solid fa-ship"></i>
             } else {
               return <i class="fa-solid fa-plane"></i>
