@@ -8,6 +8,7 @@ const Sidebar = () => {
       <ul>
         <li><SideBarLink icon="fa-solid fa-users" title="Tài khoản" path='/admin/users'/></li>
         <li><SideBarLink icon="fa-solid fa-box-open" title="Sản phẩm" path='/admin/products'/></li>
+        <li><SideBarLink icon="fa-solid fa-backward" title="Trở về trang chủ" path='/'/></li>
       </ul>
     </nav>
   )

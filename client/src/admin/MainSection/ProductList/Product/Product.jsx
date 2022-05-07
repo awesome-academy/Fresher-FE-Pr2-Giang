@@ -9,6 +9,7 @@ import { deleteProduct } from '../../../../redux/slices/productsSlice';
 const Product = ({ title, transportation, startingDate, duration, mainImg, price, id, itinerary, type }) => {
   const [isItineraryOpen, setIsItineraryOpen] = useToggle();
   const [isEditOpen, setIsEditOpen] = useToggle();
+  const [isDeleteOpen, setIsDeleteOpen] = useToggle();
   const { products } = useSelector(state => state.products);
   const dispatch = useDispatch();
 
@@ -23,7 +24,7 @@ const Product = ({ title, transportation, startingDate, duration, mainImg, price
         <h5>{title}</h5>
         <div className='product__btns'>
           <button onClick={setIsEditOpen}><i class="fa-solid fa-pen-to-square"></i></button>
-          <button onClick={handleDeleteProduct}><i class="fa-solid fa-trash-can"></i></button>
+          <button onClick={setIsDeleteOpen}><i class="fa-solid fa-trash-can"></i></button>
           <button onClick={setIsItineraryOpen}><i class="fa-solid fa-eye"></i></button>
         </div>
       </div>
@@ -41,6 +42,12 @@ const Product = ({ title, transportation, startingDate, duration, mainImg, price
           itinerary={itinerary} 
           type={type} 
           id={id}/>
+      </Modal>
+      <Modal open={isDeleteOpen} toggle={setIsDeleteOpen}>
+        <h5>Bạn có chắc chắn muốn xóa sản phẩm</h5>
+        <div className='d-flex justify-content-center'>
+          <button className='product__delete' onClick={handleDeleteProduct}>DELETE</button>
+        </div>
       </Modal>
     </div>
   )

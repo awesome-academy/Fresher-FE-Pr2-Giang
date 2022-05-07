@@ -10,6 +10,7 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { RE_PASSWORD } from '../../../data/constants';
+import { setAdmin } from '../../../redux/slices/adminSlice';
 
 const schema = yup.object().shape({
   email: yup.string().email().required(),
@@ -46,20 +47,35 @@ const Login = () => {
     }
   ];
 
+  const isAdmin = (data) => {
+    if(data.email === process.env.REACT_APP_ADMIN_EMAIL && data.password === process.env.REACT_APP_ADMIN_PASSWORD) {
+      return true;
+    } else {
+      return false
+    }
+  };
+
   const handleSignIn = (data) => {
-    const auth = getAuth();
-    signInWithEmailAndPassword(auth, data.email, data.password)
-      .then((userCredential) => {
-        const user = userCredential.user;
-        const signedInUser = users.find(registedUser => registedUser.accessId === user.uid);
-        dispatch(setUser(signedInUser));
-        navigate('/');
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        setError(error.code)
-      });
+    if(data.email) {
+      if(isAdmin(data)) {
+        dispatch(setAdmin(data));
+        navigate('/admin');
+      } else {
+        const auth = getAuth();
+        signInWithEmailAndPassword(auth, data.email, data.password)
+          .then((userCredential) => {
+            const user = userCredential.user;
+            const signedInUser = users.find(registedUser => registedUser.accessId === user.uid);
+            dispatch(setUser(signedInUser));
+            navigate('/');
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            setError(error.code)
+          });        
+      }
+    }
   };
 
   return (

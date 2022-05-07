@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import './styles.scss';
 import { convertMoney } from '../../../../../helpers/convertMoney';
 
-const Order = ({ createdAt, id, orders }) => {
+const Order = ({ createdAt, id, orders, status }) => {
   const total = orders.reduce((total, item) => total + item.total, 0);
 
   return (
@@ -11,6 +11,7 @@ const Order = ({ createdAt, id, orders }) => {
       <td>{createdAt}</td>
       <td>{convertMoney(total)}</td>
       <td>Chưa thanh toán</td>
+      {status ? <td>{status}</td> : <td>Đang đợi xử lí</td>}
     </tr>
   )
 };

@@ -1,11 +1,8 @@
-import { useSelector } from "react-redux";
 import { Navigate, Outlet } from "react-router-dom";
 
-const ProtectedRoute = () => {
-  const { user } = useSelector(state => state.users);
-
+const ProtectedRoute = ({ isLogin }) => {
   return (
-    user ? <Outlet /> : <Navigate to='/login' />
+    isLogin ? <Outlet /> : <Navigate to='/login' />
   )
 };
 

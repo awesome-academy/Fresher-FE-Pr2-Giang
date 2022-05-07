@@ -10,3 +10,10 @@
     cursor: pointer;
   }
 }
+
+.accepted-modal {
+  overflow: unset;
+  .modal-main {
+    overflow: unset;
+  }
+}

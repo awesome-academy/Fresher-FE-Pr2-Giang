@@ -3,10 +3,13 @@ import './styles.scss';
 import { getOrders } from '../../../../../redux/slices/ordersSlice';
 import { useEffect } from 'react';
 import UserOrder from '../UserOrder/UserOrder';
+import Modal from '../../../../../components/Modal/Modal';
+import useToggle from '../../../../../customHooks/useToggle';
 
-const UserDetails = ({ lastName, firstName, email, phoneNumber, address, id }) => {
+const UserDetails = ({ lastName, firstName, email, phoneNumber, address, id, setIsAcceptedModalOpen, setIsDeniedModalOpen }) => {
   const { orders } = useSelector(state => state.orders);
   const dispatch = useDispatch();
+  
 
   useEffect(() => {
     dispatch(getOrders(id));
@@ -26,7 +29,7 @@ const UserDetails = ({ lastName, firstName, email, phoneNumber, address, id }) =
         {userOrders.length > 0 ? userOrders.map(({ id, orders }) => (
           <div>
             <h4>ORDER: #{id}</h4>
-            <UserOrder orders={orders} />
+            <UserOrder orders={orders} id={id} setIsAcceptedModalOpen={setIsAcceptedModalOpen} setIsDeniedModalOpen={setIsDeniedModalOpen} />
           </div>
         )) : <div className='empty-cart'>Hiện chưa có sản phẩm nào trong giỏ hàng.</div>}
       </div>

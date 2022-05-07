@@ -67,7 +67,7 @@ const Header = () => {
             ) : null}
           </div>
           <HeaderOption icon="fa-solid fa-heart" text='Yêu thích' />
-          <Link to='/cart'><HeaderOption icon="fa-solid fa-bag-shopping" /></Link>
+          <Link to='/cart'><HeaderOption icon="fa-solid fa-bag-shopping" text='Giỏ hàng' /></Link>
         </div>
       </div>
     </header>

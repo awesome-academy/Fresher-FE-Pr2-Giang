@@ -5,12 +5,12 @@ export const navLinks = [
   },
   {
     title: "giới thiệu",
-    link: '/introduction'
+    link: '/'
   },
   {
     title: 'tour du lịch',
     toggle: true,
-    link: '/products'
+    link: '/'
   },
   {
     title: 'tour khuyến mãi',

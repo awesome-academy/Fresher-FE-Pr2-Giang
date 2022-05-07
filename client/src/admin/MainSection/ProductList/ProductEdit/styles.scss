@@ -1,7 +1,14 @@
 @import '../../../../sass/index.scss';
 
-.edit-btn {
-  @include primaryBtn($white-color, $blue-color, 5px);
-  width: 100%;
-  padding: 10px 0;
+
+.product-edit {
+  .edit-btn {
+    @include primaryBtn($white-color, $blue-color, 5px);
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .modal-main {
+    overflow: unset;
+  }
 }
