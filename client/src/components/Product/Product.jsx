@@ -26,7 +26,7 @@ const Product = ({ title, transportation, startingDate, duration, mainImg, price
         <p><i class="fa-solid fa-calendar"></i>Thời gian: <span>{duration}</span></p>
         <div className='product__price'>
           <h4>{convertMoney(price)}</h4>
-          <button>{t('book')}</button>
+          <Link to={`/product/${id}`}><button>{t('book')}</button></Link>
         </div>
       </div>
     </div>

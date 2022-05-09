@@ -51,4 +51,9 @@
       }
     }
   }
+
+  &__delete {
+    @include primaryBtn($white-color, $orange-color);
+    margin: 20px 0;
+  }
 }

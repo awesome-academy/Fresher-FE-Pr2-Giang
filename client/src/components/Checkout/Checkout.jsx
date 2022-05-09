@@ -13,6 +13,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { deleteAllCartItem } from '../../redux/slices/cartSlice';
 import { updateUser } from '../../redux/slices/usersSlice';
+import { USER_API_URL } from '../../data/constants';
+import { ORDER_API_URL } from '../../data/constants';
 
 const schema = yup.object().shape({
   fullname: yup.string().matches(RE_STRING, "Only alphabets are allowed for this field").required(),
@@ -58,12 +60,12 @@ const Checkout = () => {
 
   const handleCheckout = (data) => {
     if(user) {
-      fetch(`http://localhost:3000/users/${user.id}`, {
+      fetch(`${USER_API_URL}/${user.id}`, {
         method: 'PATCH',
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data)
       });
-      fetch(`http://localhost:3000/orders`, {
+      fetch(`${ORDER_API_URL}`, {
         method: 'POST',
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({userId: user.id, orders: [...cartList], createdAt: new Date().toDateString()})
@@ -102,15 +104,11 @@ const Checkout = () => {
                   <p>Tạm tính:</p>
                   <p>{convertMoney(totalPayment)}</p>
                 </div>
-                <div>
-                  <p>Phí vận chuyển:</p>
-                  <p>{convertMoney(40000)}</p>
-                </div>
               </div>
               <div className='checkout__order'>
                 <div>
                   <h5>Tổng cộng</h5>
-                  <h4>{convertMoney(totalPayment + 40000)}</h4>
+                  <h4>{convertMoney(totalPayment)}</h4>
                 </div>
                 <div>
                   <Link to='/cart'><p><i class="fa-solid fa-chevron-left"></i> Quay về giỏ hàng</p></Link>

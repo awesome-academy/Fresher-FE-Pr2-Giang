@@ -5,6 +5,8 @@ import UserDetails from './UserDetails/UserDetails';
 
 const User = ({ firstName, lastName, phoneNumber, email, address, id }) => {
   const [isModalOpen, setIsModalOpen] = useToggle();
+  const [isAcceptedModalOpen, setIsAcceptedModalOpen] = useToggle();
+  const [isDeniedModalOpen, setIsDeniedModalOpen] = useToggle();
 
   return (
     <>
@@ -21,7 +23,15 @@ const User = ({ firstName, lastName, phoneNumber, email, address, id }) => {
           phoneNumber={phoneNumber}
           email={email}
           address={address}
-          id={id} />
+          id={id}
+          setIsAcceptedModalOpen={setIsAcceptedModalOpen} 
+          setIsDeniedModalOpen={setIsDeniedModalOpen} />
+      </Modal>
+      <Modal open={isAcceptedModalOpen} toggle={setIsAcceptedModalOpen}>
+        <h4>Đơn hàng đã được chấp nhận.</h4>
+      </Modal>
+      <Modal className='denied-modal' open={isDeniedModalOpen} toggle={setIsDeniedModalOpen}>
+        <h4>Đơn hàng đã bị từ chối.</h4>
       </Modal>
     </>
   )

@@ -25,6 +25,7 @@ const UserOrders = () => {
               <td>Ngày</td>
               <td>Giá trị đơn hàng</td>
               <td>TT thanh toán</td>
+              <td>Tình trạng</td>
             </tr>
           </thead>
           <tbody>

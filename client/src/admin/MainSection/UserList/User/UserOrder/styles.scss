@@ -1,1 +1,13 @@
 @import '../../../../../sass/index.scss';
+
+.user-orders {
+  &__accept {
+    @include primaryBtn($white-color, $blue-color);
+    margin: 5px 5px;
+  }
+
+  &__deny {
+    @include primaryBtn($white-color, $orange-color);
+    margin: 0 5px;
+  }
+}

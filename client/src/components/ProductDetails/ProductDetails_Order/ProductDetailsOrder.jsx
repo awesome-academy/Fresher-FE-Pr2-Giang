@@ -80,7 +80,7 @@ const ProductDetailsOrder = ({ price, title, duration, mainImg, id }) => {
         </div>
       </Modal>
       <Modal open={isDateChosen} toggle={setIsDateChosen}>
-        <h3>Starting date needs to be chosen!</h3>
+        <h4>Departure date needs to be chosen!</h4>
       </Modal>
     </div>
   )

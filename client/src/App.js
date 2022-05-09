@@ -19,8 +19,12 @@ import Layout from "./Layout/Layout";
 import Admin from "./admin/Admin";
 import ProductList from './admin/MainSection/ProductList/ProductList';
 import UserList from './admin/MainSection/UserList/UserList';
+import { useSelector } from "react-redux";
 
 function App() {
+  const { user } = useSelector(state => state.users);
+  const { admin } = useSelector(state => state.admin);
+
   return (
     <>
       <Routes>
@@ -30,13 +34,13 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<SignUp />} />
           <Route path='/cart' element={<Cart />} />
-          <Route element={<ProtectedRoute />}>
+          <Route element={<ProtectedRoute isLogin={user} />}>
             <Route path='/checkout' element={<Checkout />} />
             <Route path='/checkout-success' element={<CheckoutSuccess />} />
           </Route>
           <Route path='/checkout' element={<Checkout />} />
           <Route path='/checkout-success' element={<CheckoutSuccess />} />
-          <Route element={<ProtectedRoute />}>
+          <Route element={<ProtectedRoute isLogin={user} />}>
             <Route path='/user' element={<UserProfile />}>
               <Route path='info' element={<AccountInfo />} />
               <Route path='orders' element={<UserOrders />} />
@@ -45,9 +49,11 @@ function App() {
             </Route>
           </Route>
         </Route>
-        <Route path="/admin" element={<Admin />}>
-          <Route path="products" element={<ProductList />}/>
-          <Route path="users" element={<UserList />}/>
+        <Route element={<ProtectedRoute isLogin={admin} />}>
+          <Route path="/admin" element={<Admin />}>
+            <Route path="products" element={<ProductList />}/>
+            <Route path="users" element={<UserList />}/>
+          </Route>
         </Route>
       </Routes>
     </>

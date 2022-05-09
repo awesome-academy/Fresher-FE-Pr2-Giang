@@ -8,12 +8,16 @@ import ProductDetailsOrder from './ProductDetails_Order/ProductDetailsOrder';
 import { useEffect } from 'react';
 import { getProducts } from '../../redux/slices/productsSlice';
 import { useTranslation } from 'react-i18next';
+import SectionHeading from '../Home/SectionHeading/SectionHeading';
+import Product from '../Product/Product';
+import { useRef } from 'react';
 
 const ProductDetails = () => {
   const { t } = useTranslation();
 
   const { id } = useParams();
   const { products } = useSelector(state => state.products);
+  const ref = useRef(null);
 
   const dispatch = useDispatch();
 
@@ -22,6 +26,7 @@ const ProductDetails = () => {
   }, []);
 
   const product = products.find(product => product.id === +id);
+  const relatedProducts = products.filter(item => item.type === product.type);
 
   const renderItinerary = (itinerary) => {
     const processedIti = itinerary.split('/n');
@@ -43,10 +48,17 @@ const ProductDetails = () => {
     )
   };
 
+  const handleScrollDown = () => {
+    window.scrollTo({
+      top: ref.current.clientHeight - 150,
+      behavior:'smooth'
+    })
+  };
+
   return (
     <section className='product-details'>
       <div className='container-xl'>
-        <div className='row'>
+        <div className='row' ref={ref}>
           <div className='col-lg-8 product-details__left'>
             {product?.itinerary ? renderItinerary(product.itinerary) : <div className='product-not-found'>Sản phẩm hiện chưa có chương trình cụ thể</div>}
             {product?.itinerary && (
@@ -72,7 +84,23 @@ const ProductDetails = () => {
               })}
               <p><i class="fa-solid fa-clock"></i>Lịch khởi hành: <span>{product?.startingDate}</span></p>
               <p><i class="fa-solid fa-calendar"></i>Thời gian: <span>{product?.duration}</span></p>
-              <button className='order-btn'>{t('book')}</button>
+              <button className='order-btn' onClick={handleScrollDown}>{t('book')}</button>
+            </div>
+          </div>
+        </div>
+        <div className='row mt-3'>
+          <div className='related-products col-lg-12'>
+            <SectionHeading title='tour liên quan'/>
+            <div className='row'>
+                {relatedProducts && relatedProducts.map((product, index) => {
+                  if(index < 4){
+                    return (
+                      <div className='col-lg-3'>
+                        <Product {...product} key={product.id} />
+                      </div>
+                    )
+                  }
+                })}
             </div>
           </div>
         </div>

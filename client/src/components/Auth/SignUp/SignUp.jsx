@@ -8,6 +8,7 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { RE_PASSWORD, RE_STRING } from '../../../data/constants';
+import { USER_API_URL } from '../../../data/constants';
 
 const schema = yup.object().shape({
   lastName: yup.string().matches(RE_STRING, "Only alphabets are allowed for this field").required(),
@@ -68,7 +69,7 @@ const SignUp = () => {
           ...data
         }
 
-        fetch('http://localhost:3000/users', {
+        fetch(USER_API_URL, {
           method: 'POST',
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(jsonUser)
